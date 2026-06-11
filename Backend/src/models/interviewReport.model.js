@@ -118,7 +118,15 @@ const mongoose = require("mongoose");
     technicalQuestions:[technicalQuestionsSchema],
     behavioralQuestions:[behavioralQuestionSchema],
     skillGaps:[skillGapSchema],
-    preparationPlan:[preparationPlanSchema]
+    preparationPlan:[preparationPlanSchema],
+    user:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"users"
+    },
+    title:{
+        type:String,
+        required:[true,"job title is required"]
+    }
 
     },{
         timestamps:true
